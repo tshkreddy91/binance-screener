@@ -25,11 +25,13 @@ def get_inr_rate():
 def fetch_perpetual_futures_symbols():
     try:
         res = requests.get(BINANCE_API_URL + SYMBOLS_ENDPOINT).json()
-        symbols = [s["symbol"] for s in res["symbols"] if s["contractType"] == "PERPETUAL"]
+        st.write("API response keys:", res.keys())  # Debug print
+        symbols = [s["symbol"] for s in res.get("symbols", []) if s.get("contractType") == "PERPETUAL"]
         return symbols
     except Exception as e:
         st.error(f"Error fetching symbols: {e}")
         return []
+
 
 def fetch_5day_1min_avg_vol(symbol, days=5):
     try:
