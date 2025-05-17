@@ -6,7 +6,7 @@ import time
 from datetime import datetime
 import pytz
 from streamlit_autorefresh import st_autorefresh
-
+st.set_page_config(layout="wide")
 # Constants
 BINANCE_API_URL = "https://fapi.binance.com"
 SYMBOLS_ENDPOINT = "/fapi/v1/exchangeInfo"
