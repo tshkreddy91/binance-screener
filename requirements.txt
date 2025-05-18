@@ -1,6 +1,5 @@
 streamlit
-requests
 pandas
-pytz
-streamlit-autorefresh
+numpy
 python-binance
+streamlit-autorefresh
