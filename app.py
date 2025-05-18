@@ -1,4 +1,10 @@
 import streamlit as st
+from binance.client import Client
+
+api_key = st.secrets["BINANCE_API_KEY"]
+secret_key = st.secrets["BINANCE_SECRET_KEY"]
+
+client = Client(api_key, secret_key)
 
 # Must be first Streamlit command
 st.set_page_config(layout="wide")
